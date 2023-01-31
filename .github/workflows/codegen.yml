@@ -2,7 +2,7 @@ name: Codegen Tests
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, upgrade-smithy-1.27.x-ci-test ]
   pull_request:
     branches: [ main ]
 
@@ -38,7 +38,8 @@ jobs:
 
     - uses: actions/checkout@v2
       with:
-        repository: aws/smithy-go
+        repository: syall/smithy-go
+        ref: upgrade-smithy-1.27.x
         path: tmp-smithy-go
 
     - name: Build and publish smithy-go
